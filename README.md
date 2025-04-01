@@ -15,9 +15,10 @@
 - 異なる天候の自動運転データで学習したモデルを適応させる。
 
 **手法:**  
-- **敵対的学習（DANN）**: 判別器を用いてソース・ターゲットの区別を困難にする。  
-- **MMD（Maximum Mean Discrepancy）**: 特徴分布の差を最小化。  
-
+- **DANN（Domain Adversarial Neural Network）**: 
+Unsupervised Domain Adaptation by Backpropagation(Yaroslav Ganin+,2015) 
+- **MCD**: 
+Maximum Classifier Discrepancy for Unsupervised Domain Adaptation(Kuniaki Saito+,2018)
 ---
 
 ## **オープンセットドメイン適応（Open-set Domain Adaptation）**
@@ -30,7 +31,10 @@
 - 医療診断で既存の病気を学習したが、新しい病気が出てきた場合。  
 
 **手法:**  
-- **OSBP（Open-Set Back-Propagation）**: 信頼度の低いサンプルを「未知」として分類する。  
-- **未知クラスの検出（Outlier Detection）**: 特徴分布から外れたサンプルを特定。  
-
+- **OSBP**:損失関数の最大最小によって未知の学習とドメイン適応を同時に行う手法。  
+Open set domain adaptation by backpropagation(K. Saito+,2018)
+- **DTSSM**:2つの教師生徒構造によって安定した類似度スコアで未知の学習を行う。ドメイン適応はDANNベース。  
+Dual teacher–student based separation mechanism for open set domain adaptation(Yiyang Li+,2023)
+- **PSDC**:これまでの手法は未知を1つのクラスで学習していたが、複数クラス用意する手法。  
+PSDC: A Prototype-Based Shared-Dummy Classifier Model for Open-Set Domain Adaptation(Z. Liu+,2023)
 ---
